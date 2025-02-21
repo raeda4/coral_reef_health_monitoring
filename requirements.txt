@@ -1,0 +1,11 @@
+geopandas
+matplotlib
+numpy
+pandas
+folium
+scikit-learn
+tensorflow
+rasterio
+sentinelsat
+flask
+streamlit
