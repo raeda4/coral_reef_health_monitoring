@@ -4,3 +4,5 @@ data/processed/
 data/models/
 
 config.yaml
+.venv
+
