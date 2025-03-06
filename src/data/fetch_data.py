@@ -5,15 +5,17 @@ import folium
 
 ee.Authenticate()
 ee.Initialize(project='ee-raedambach')
-longitude = -149.56194 
-latitude = -17.00872
+# Location: Coral Sea Protected Habitat Zone
+latitude = -21.303269
+longitude = 151.547206
 
 
 def download_satellite_data():
     # Placeholder for downloading satellite data
     print('Downloading satellite images...')
     reef = ee.Geometry.Point([longitude, latitude])  
-    dataset = ee.ImageCollection('COPERNICUS/S2_HARMONIZED').filterBounds(reef).filterDate('2024-01-01', '2024-01-02')
+    dataset = ee.ImageCollection('COPERNICUS/S2_HARMONIZED').filterBounds(reef) \
+#        .filterDate('2024-01-01', '2024-01-02') 
     print('Number of images in collection:', dataset.size().getInfo())
     dataset = dataset.median()  
     Map = geemap.Map()  
